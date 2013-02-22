@@ -4,7 +4,7 @@ require_once '../modelo/Usuario.php';
 
 class UsuarioNegocio{
 	
-	function insertar ($nombre1, $paterno, $materno, $fecha, $dni){
+	public function insertar ($nombre1, $paterno, $materno, $fecha, $dni){
 		
 		$modelo = new Usuario();
 		$modelo->setNombre1($nombre1);
@@ -17,7 +17,7 @@ class UsuarioNegocio{
 		$dao->insertar($modelo);
 	}
 
-	function listar(){
+	public function listar(){
 		$dao = new UsuarioDAO();		
 		return $dao->listar();
 	}
