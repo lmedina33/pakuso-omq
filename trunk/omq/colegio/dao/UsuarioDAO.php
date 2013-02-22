@@ -25,6 +25,10 @@ class UsuarioDAO{
 
 		return $result;
 	}
+	
+	public function obtener(){
+		
+	}
 
 
 }
