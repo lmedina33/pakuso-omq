@@ -7,7 +7,7 @@ print '</br>';
 print 'Ingresar';
 print '</br>';
 $negocio = new UsuarioNegocio();
-$negocio->insertar("pepe","rodriguez","sanchez","2013-02-11","1123123");
+$negocio->insertar("1234","pepe","rodriguez","sanchez","2013-02-11","1123123");
 
 print '</br>';
 print 'Listar';
