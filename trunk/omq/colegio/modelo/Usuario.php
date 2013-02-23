@@ -51,6 +51,6 @@
 		public function getEstado_pago(){return $this->estado_pago;}
 		public function setEstado_pago($estado_pago){$this->estado_pago = $estado_pago;}
 		
-		
+
 	}
 ?>
