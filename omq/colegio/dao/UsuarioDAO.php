@@ -5,12 +5,12 @@ require_once '../modelo/Usuario.php';
 
 class UsuarioDAO{
 
-	public function insertar (Usuario $usu){
+	public function insertar (Usuario $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
 		$query = "INSERT INTO usuario (nombre1, paterno,
-				materno, fecha_nacimiento,dni) VALUES ('".$usu->getNombre1()."','".$usu->getPaterno()."',
-				'".$usu->getMaterno()."','".$usu->getFecha_nacimiento()."','".$usu->getDni()."')";
+				materno, fecha_nacimiento,dni) VALUES ('".$modelo->getNombre1()."','".$modelo->getPaterno()."',
+				'".$modelo->getMaterno()."','".$modelo->getFecha_nacimiento()."','".$modelo->getDni()."')";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 	}
@@ -26,11 +26,24 @@ class UsuarioDAO{
 		return $result;
 	}
 	
-	public function obtener(){
+	public function obtener(Usuario $modelo){
+		$con = new ConexionDB();
+		$link = $con->conectarBD();
+		$query = "SELECT id_usuario, nombre1 FROM usuario WHERE id_usuario = ".$modelo->getId_usuario();
+		$result = mysql_query($query, $link);
+		mysql_close($link);
+		
+		return $result;
+		
+	}
+	
+	public function modificar(){
 		
 	}
 
-
+	public function eliminar(){
+		
+	}
 }
 
 
