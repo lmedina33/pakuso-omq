@@ -37,11 +37,20 @@ class UsuarioDAO{
 		
 	}
 	
-	public function modificar(){
-		
+	public function modificar(Usuario $modelo){
+		$con = new ConexionDB();
+		$link = $con->conectarBD();
+		$query = "UPDATE usuario SET nombre1='".$modelo->getNombre1()."' WHERE id_usuario=".$modelo->getId_usuario();
+		$result = mysql_query($query, $link) or die(mysql_error($link));
+		mysql_close($link);	
 	}
 
-	public function eliminar(){
+	public function eliminar(Usuario $modelo){
+		$con = new ConexionDB();
+		$link = $con->conectarBD();
+		$query = "DELETE FROM usuario WHERE id_usuario=".$modelo->getId_usuario();
+		$result = mysql_query($query, $link) or die(mysql_error($link));
+		mysql_close($link);
 		
 	}
 }
