@@ -4,9 +4,10 @@ require_once '../modelo/Usuario.php';
 
 class UsuarioNegocio{
 	
-	public function insertar ($nombre1, $paterno, $materno, $fecha, $dni){
+	public function insertar ($clave, $nombre1, $paterno, $materno, $fecha, $dni){
 		
 		$modelo = new Usuario();
+		$modelo->setClave($clave);
 		$modelo->setNombre1($nombre1);
 		$modelo->setPaterno($paterno);
 		$modelo->setMaterno($paterno);
@@ -19,11 +20,11 @@ class UsuarioNegocio{
 
 	public function listar(){
 		$dao = new UsuarioDAO();		
-		
 		return $dao->listar();
 	}
 	
 	public function obtener($id_usuario){
+		
 		$modelo = new Usuario();
 		$modelo->setId_usuario($id_usuario);
 		
@@ -32,6 +33,7 @@ class UsuarioNegocio{
 	}
 	
 	public function modificar($id_usuario, $nombre1){
+		
 		$modelo = new Usuario();
 		$modelo->setId_usuario($id_usuario);
 		$modelo->setNombre1($nombre1);
@@ -41,6 +43,7 @@ class UsuarioNegocio{
 	}
 	
 	public function eliminar($id_usuario){
+		
 		$modelo = new Usuario();
 		$modelo->setId_usuario($id_usuario);
 		

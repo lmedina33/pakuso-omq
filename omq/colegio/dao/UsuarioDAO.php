@@ -8,8 +8,8 @@ class UsuarioDAO{
 	public function insertar (Usuario $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "INSERT INTO usuario (nombre1, paterno,
-				materno, fecha_nacimiento,dni) VALUES ('".$modelo->getNombre1()."','".$modelo->getPaterno()."',
+		$query = "INSERT INTO usuario (clave, nombre1, paterno,
+				materno, fecha_nacimiento,dni) VALUES ('".$modelo->getClave()."','".$modelo->getNombre1()."','".$modelo->getPaterno()."',
 				'".$modelo->getMaterno()."','".$modelo->getFecha_nacimiento()."','".$modelo->getDni()."')";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
