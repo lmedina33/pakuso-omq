@@ -19,22 +19,33 @@ class UsuarioNegocio{
 
 	public function listar(){
 		$dao = new UsuarioDAO();		
+		
 		return $dao->listar();
 	}
 	
 	public function obtener($id_usuario){
 		$modelo = new Usuario();
 		$modelo->setId_usuario($id_usuario);
+		
 		$dao = new UsuarioDAO();
 		return $dao->obtener($modelo);
 	}
 	
-	public function modificar(){
-	
+	public function modificar($id_usuario, $nombre1){
+		$modelo = new Usuario();
+		$modelo->setId_usuario($id_usuario);
+		$modelo->setNombre1($nombre1);
+		
+		$dao = new UsuarioDAO();
+		$dao->modificar($modelo);
 	}
 	
-	public function eliminar(){
-	
+	public function eliminar($id_usuario){
+		$modelo = new Usuario();
+		$modelo->setId_usuario($id_usuario);
+		
+		$dao = new UsuarioDAO();
+		$dao->eliminar($modelo);
 	}
 }
 ?>
