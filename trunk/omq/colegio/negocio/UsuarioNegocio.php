@@ -21,5 +21,20 @@ class UsuarioNegocio{
 		$dao = new UsuarioDAO();		
 		return $dao->listar();
 	}
+	
+	public function obtener($id_usuario){
+		$modelo = new Usuario();
+		$modelo->setId_usuario($id_usuario);
+		$dao = new UsuarioDAO();
+		return $dao->obtener($modelo);
+	}
+	
+	public function modificar(){
+	
+	}
+	
+	public function eliminar(){
+	
+	}
 }
 ?>
