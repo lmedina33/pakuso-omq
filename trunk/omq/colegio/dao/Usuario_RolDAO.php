@@ -2,7 +2,7 @@
 require_once '../util/ConexionDB.php';
 require_once '../modelo/Usuario_Rol.php';
 
-class RolDAO{
+class Usuario_RolDAO{
 		
 	public function insertar (Usuario_Rol $modelo){
 		$con = new ConexionDB();
