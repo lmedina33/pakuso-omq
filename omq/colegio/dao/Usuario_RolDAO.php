@@ -1,14 +1,14 @@
 <?php
 require_once '../util/ConexionDB.php';
-require_once '../modelo/Rol.php';
+require_once '../modelo/Usuario_Rol.php';
 
 class RolDAO{
 		
-	public function insertar (Rol $modelo){
+	public function insertar (Usuario_Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "INSERT INTO rol (rol_nombre, descripcion) VALUES 
-				('".$modelo->getRol_nombre()."','".$modelo->getDescripcion()."'";
+		$query = "INSERT INTO Usuario_Rol (rol_nombre, id_usuario) VALUES 
+				('".$modelo->getRol_nombre()."','".$modelo->getId_usuario()."'";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 	}
@@ -17,17 +17,17 @@ class RolDAO{
 
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT rol_nombre, descripcion FROM rol";
+		$query = "SELECT rol_nombre, id_usuario FROM Usuario_Rol";
 		$result = mysql_query($query, $link); 
 		mysql_close($link);
 
 		return $result;
 	}
 	
-	public function obtener(Rol $modelo){
+	public function obtener(Usuario_Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT rol_nombre, descripcion FROM rol WHERE rol_nombre = ".$modelo->getRol_nombre();
+		$query = "SELECT rol_nombre, id_usuario FROM Usuario_Rol WHERE rol_nombre = ".$modelo->getRol_nombre();
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		
@@ -35,18 +35,18 @@ class RolDAO{
 		
 	}
 	
-	public function modificar(Rol $modelo){
+	public function modificar(Usuario_Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "UPDATE rol SET descripcion='".$modelo->getDescripcion()."' WHERE rol_nombre=".$modelo->getRol_nombre();
+		$query = "UPDATE Usuario_Rol SET id_usuario='".$modelo->getId_usuario()."' WHERE rol_nombre=".$modelo->getRol_nombre();
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);	
 	}
 
-	public function eliminar(Rol $modelo){
+	public function eliminar(Usuario_Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "DELETE FROM rol WHERE rol_nombre=".$modelo->getRol_nombre();
+		$query = "DELETE FROM Usuario_Rol WHERE rol_nombre=".$modelo->getRol_nombre();
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 		
