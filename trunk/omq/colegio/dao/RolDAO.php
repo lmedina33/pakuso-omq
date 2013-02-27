@@ -8,7 +8,7 @@ class RolDAO{
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
 		$query = "INSERT INTO rol (rol_nombre, descripcion) VALUES 
-				('".$modelo->getRol_nombre()."','".$modelo->getDescripcion()."'";
+				('".$modelo->getRol_nombre()."','".$modelo->getDescripcion()."')";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 	}
