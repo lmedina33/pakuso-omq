@@ -27,7 +27,7 @@ class Usuario_RolDAO{
 	public function obtener(Usuario_Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT rol_nombre, id_usuario FROM Usuario_Rol WHERE rol_nombre = ".$modelo->getRol_nombre();
+		$query = "SELECT rol_nombre, id_usuario FROM Usuario_Rol WHERE id_usuario = ".$modelo->getId_Usuario();
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		
@@ -38,7 +38,7 @@ class Usuario_RolDAO{
 	public function modificar(Usuario_Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "UPDATE Usuario_Rol SET id_usuario='".$modelo->getId_usuario()."' WHERE rol_nombre=".$modelo->getRol_nombre();
+		$query = "UPDATE Usuario_Rol SET rol_nombre='".$modelo->getRol_nombre()."' WHERE id_usuario=".$modelo->getId_usuario();
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);	
 	}
@@ -46,7 +46,7 @@ class Usuario_RolDAO{
 	public function eliminar(Usuario_Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "DELETE FROM Usuario_Rol WHERE rol_nombre=".$modelo->getRol_nombre();
+		$query = "DELETE FROM Usuario_Rol WHERE Id_usuario=".$modelo->getId_usuario();
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 		
