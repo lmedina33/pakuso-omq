@@ -38,12 +38,12 @@ class UsuarioNegocio{
 		$dao->modificar($modelo);
 	}
 	
-	public function eliminar($id_usuario){
+	public function eliminar($rol_nombre){
 		
-		$modelo = new Usuario();
-		$modelo->setId_usuario($id_usuario);
+		$modelo = new Rol();
+		$modelo->setRol_nombre($rol_nombre);
 		
-		$dao = new UsuarioDAO();
+		$dao = new RolDAO();
 		$dao->eliminar($modelo);
 	}
 }
