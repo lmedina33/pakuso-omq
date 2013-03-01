@@ -27,26 +27,26 @@ class Notas{
 	public function getId_grado() {return $this->id_grado;}
 	public function setId_grado($id_grado){		$this->id_grado = $id_grado;}
 	
-	public function getcuaderno() {return $this->cuaderno;}
-	public function setcuaderno($cuaderno){		$this->cuaderno = $cuaderno;}
+	public function getCuaderno() {return $this->cuaderno;}
+	public function setCuaderno($cuaderno){		$this->cuaderno = $cuaderno;}
 	
-	public function getoral() {return $this->oral;}
-	public function setoral($oral){		$this->oral = $oral;}
+	public function getOral() {return $this->oral;}
+	public function setOral($oral){		$this->oral = $oral;}
 	
-	public function getcomportamiento() {return $this->comportamiento;}
-	public function setcomportamiento($comportamiento){		$this->comportamiento = $comportamiento;}
+	public function getComportamiento() {return $this->comportamiento;}
+	public function setComportamiento($comportamiento){		$this->comportamiento = $comportamiento;}
 	
-	public function getex_mensual() {return $this->ex_mensual;}
-	public function setex_mensual($ex_mensual){		$this->ex_mensual = $ex_mensual;}
+	public function getEx_mensual() {return $this->ex_mensual;}
+	public function setEx_mensual($ex_mensual){		$this->ex_mensual = $ex_mensual;}
 	
-	public function getex_bimestral() {return $this->ex_bimestral;}
-	public function setex_bimestral($ex_bimestral){		$this->ex_bimestral = $ex_bimestral;}
+	public function getEx_bimestral() {return $this->ex_bimestral;}
+	public function setEx_bimestral($ex_bimestral){		$this->ex_bimestral = $ex_bimestral;}
 	
-	public function getexposicion() {return $this->exposicion;}
-	public function setexposicion($exposicion){		$this->exposicion = $exposicion;}
+	public function getExposicion() {return $this->exposicion;}
+	public function setExposicion($exposicion){		$this->exposicion = $exposicion;}
 	
-	public function getnota_final() {return $this->nota_final;}
-	public function setnota_final($nota_final){		$this->nota_final = $nota_final;}
+	public function getNota_final() {return $this->nota_final;}
+	public function setNota_final($nota_final){		$this->nota_final = $nota_final;}
 
 }
 
