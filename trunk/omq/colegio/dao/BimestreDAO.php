@@ -7,9 +7,9 @@ class CursosDAO{
         public function insertar (Bimestre $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "INSERT INTO bimestre (id_bimestre, nombre, grado) VALUES 
+                $query = "INSERT INTO bimestre (id_bimestre, nombre, descripcion) VALUES 
                                 ('".$modelo->getId_bimestre()."','".$modelo->getNombre().
-                                "','".$modelo->getGrado()."')";
+                                "','".$modelo->getDescripcion()."')";
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);
         }
@@ -18,7 +18,7 @@ class CursosDAO{
 
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT id_bimestre, nombre, grado FROM bimestre";
+                $query = "SELECT id_bimestre, nombre, descripcion FROM bimestre";
                 $result = mysql_query($query, $link); 
                 mysql_close($link);
 
@@ -28,7 +28,7 @@ class CursosDAO{
         public function obtener(Bimestre $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT id_bimestre, nombre, grado FROM bimestre WHERE id_bimestre = ".$modelo->getId_bimestre();
+                $query = "SELECT id_bimestre, nombre, descripcion FROM bimestre WHERE id_bimestre = ".$modelo->getId_bimestre();
                 $result = mysql_query($query, $link);
                 mysql_close($link);
                 

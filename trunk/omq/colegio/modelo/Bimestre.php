@@ -3,7 +3,7 @@ class Bimestre{
         
         private $id_bimestre;
         private $nombre;
-        private $grado;
+        private $descripciom;
         
         /** getter / setter */
         public function getId_bimestre() {return $this->id_bimestre;}
@@ -12,7 +12,7 @@ class Bimestre{
         public function getNombre() {return $this->nombre;}
         public function setNombre($descripcion){$this->nombre = $nombre;}
         
-        public function getGrado() {return $this->grado;}
-        public function setGrado($descripcion){$this->grado = $grado;}
+        public function getDescripciom() {return $this->descripciom;}
+        public function setDescripciom($descripcion){$this->descripciom = $descripciom;}
 }
 ?>
