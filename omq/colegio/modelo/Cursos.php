@@ -3,7 +3,7 @@ class Cursos{
         
         private $id_cursos;
         private $nombre;
-        previte $detalle;
+        private $detalle;
         
         /** getter / setter */
         public function getId_cursos() {return $this->id_cursos;}
@@ -14,5 +14,11 @@ class Cursos{
         
         public function getDetalle() {return $this->detalle;}
         public function setDetalle($detalle){$this->detalle = $detalle;}
+        
+        public function getId_usuario() {return $this->Id_usuario;}
+        public function setId_usuario($id_usuario){$this->id_usuario = $id_usuario;}
+        
+        public function getId_grado() {return $this->id_grado;}
+        public function setId_grado($id_grado){$this->id_grado = $id_grado;}
 }
 ?>

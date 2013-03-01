@@ -4,12 +4,12 @@ require_once '../modelo/Bimestre.php';
 
 class BimestreNegocio{
         
-        public function insertar ($id_bimestre, $nombre, $grado){
+        public function insertar ($id_bimestre, $nombre, $descripcion){
                 
                 $modelo = new Bimestre();
                 $modelo->setId_cursos($id_bimestre);
                 $modelo->setNombre($nombre);
-                $modelo->setDetalle($grado);
+                $modelo->setDescripciom($descripcion);
                 
                 $dao = new BimestreDAO();
                 $dao->insertar($modelo);

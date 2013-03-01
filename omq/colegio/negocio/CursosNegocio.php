@@ -2,14 +2,14 @@
 require_once '../dao/CursosDAO.php';
 require_once '../modelo/Cursos.php';
 
-class UsuarioNegocio{
+class CursosNegocio{
         
-        public function insertar ($id_cursos, $nombre, $detalle){
+        public function insertar ($id_cursos, $nombre, $id_usuario, $id_grado){
                 
                 $modelo = new Cursos();
                 $modelo->setId_cursos($rol_nombre);
-                $modelo->setNombre($descripcion);
-                $modelo->setDetalle($detalle);
+                $modelo->setId_usuario($id_usuario);
+                $modelo->setId_grado($id_grado);
                 
                 $dao = new CursosDAO();
                 $dao->insertar($modelo);
