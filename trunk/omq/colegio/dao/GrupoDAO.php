@@ -2,7 +2,7 @@
 require_once '../util/ConexionDB.php';
 require_once '../modelo/Grupo.php';
 
-class CursosDAO{
+class GrupoDAO{
                 
         public function insertar (Grupo $modelo){
                 $con = new ConexionDB();

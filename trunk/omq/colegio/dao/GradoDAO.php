@@ -7,7 +7,7 @@ class GradoDAO{
 	public function insertar (Grado $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "INSERT INTO rol (id_grado, nombre, precio) VALUES 
+		$query = "INSERT INTO grado (id_grado, nombre, precio) VALUES 
 				('".$modelo->getId_grado()."','".$modelo->getNombre().
 				"','".$modelo->getPrecio()."')";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
@@ -28,7 +28,7 @@ class GradoDAO{
 	public function obtener(Grado $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT id_grado, nombre, precio FROM rol WHERE id_grado = ".$modelo->getId_grado();
+		$query = "SELECT id_grado, nombre, precio FROM grado WHERE id_grado = ".$modelo->getId_grado();
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		
