@@ -6,7 +6,6 @@ class Notas{
 	private $id_cursos;
 	private $id_usuario;
 	private $id_bimestre;
-	private $id_grado;
 	private $cuaderno;
 	private $oral;
 	private $comportamiento;
@@ -23,9 +22,6 @@ class Notas{
 	
 	public function getId_bimestre() {return $this->id_bimestre;}
 	public function setId_bimestre($id_bimestre){		$this->id_bimestre = $id_bimestre;}
-	
-	public function getId_grado() {return $this->id_grado;}
-	public function setId_grado($id_grado){		$this->id_grado = $id_grado;}
 	
 	public function getCuaderno() {return $this->cuaderno;}
 	public function setCuaderno($cuaderno){		$this->cuaderno = $cuaderno;}

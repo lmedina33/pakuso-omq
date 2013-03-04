@@ -1,14 +1,14 @@
 <?php
 require_once '../util/ConexionDB.php';
-require_once '../modelo/Bimestre.php';
+require_once '../modelo/Grupo.php';
 
 class CursosDAO{
                 
-        public function insertar (Bimestre $modelo){
+        public function insertar (Grupo $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "INSERT INTO bimestre (id_bimestre, nombre) VALUES 
-                                ('".$modelo->getId_bimestre()."','".$modelo->getNombre().
+                $query = "INSERT INTO grupo (id_grupo, nombre) VALUES 
+                                ('".$modelo->getId_grupo()."','".$modelo->getNombre().
                                 "')";
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);
@@ -18,17 +18,17 @@ class CursosDAO{
 
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT * FROM bimestre";
+                $query = "SELECT * FROM grupo";
                 $result = mysql_query($query, $link); 
                 mysql_close($link);
 
                 return $result;
         }
         
-        public function obtener(Bimestre $modelo){
+        public function obtener(Grupo $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT * FROM bimestre WHERE id_bimestre = ".$modelo->getId_bimestre();
+                $query = "SELECT * FROM grupo WHERE id_grupo = ".$modelo->getId_grupo();
                 $result = mysql_query($query, $link);
                 mysql_close($link);
                 
@@ -36,18 +36,18 @@ class CursosDAO{
                 
         }
         
-        public function modificar(Bimestre $modelo){
+        public function modificar(Grupo $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "UPDATE bimestre SET nombre='".$modelo->getNombre()."' WHERE id_bimestre=".$modelo->getId_bimestre();
+                $query = "UPDATE grupo SET nombre='".$modelo->getNombre()."' WHERE id_grupo=".$modelo->getId_grupo();
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);     
         }
 
-        public function eliminar(Bimestre $modelo){
+        public function eliminar(Grupo $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "DELETE FROM bimestre WHERE id_bimestre=".$modelo->getId_bimestre();
+                $query = "DELETE FROM grupo WHERE id_grupo=".$modelo->getId_grupo();
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);
                 

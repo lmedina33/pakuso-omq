@@ -1,12 +1,12 @@
 <?php
-class Bimestre{
+class Grupo{
         
-        private $id_bimestre;
+        private $id_grupo;
         private $nombre;
         
         /** getter / setter */
-        public function getId_bimestre() {return $this->id_bimestre;}
-        public function setId_bimestre($id_bimestre){$this->id_bimestre = $id_bimestre;}
+        public function getId_grupo() {return $this->id_grupo;}
+        public function setId_grupo($id_grupo){$this->id_grupo = $id_grupo;}
         
         public function getNombre() {return $this->nombre;}
         public function setNombre($descripcion){$this->nombre = $nombre;}

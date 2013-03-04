@@ -8,9 +8,9 @@ class NotasDAO{
 	public function insertar (Notas $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "INSERT INTO notas (id_cursos, id_usuario, id_bimestre, id_grado, cuaderno,oral) 
+		$query = "INSERT INTO notas (id_cursos, id_usuario, id_bimestre, cuaderno,oral) 
 				VALUES ('".$modelo->getId_cursos()."','".$modelo->getId_usuario()."','".$modelo->getId_bimestre()."',
-				'".$modelo->getId_grado()."','".$modelo->getCuaderno()."','".$modelo->getOral()."')";
+				'".$modelo->getCuaderno()."','".$modelo->getOral()."')";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 	}
@@ -29,9 +29,9 @@ class NotasDAO{
 	public function obtener(Notas $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT id_usuario, cuaderno,oral FROM notas WHERE id_usuario = ".$modelo->getId_usuario().
-				" and id_cursos = ".$modelo->getId_cursos()." and id_bimestre = ".$modelo->getId_bimestre().
-				" and id_grado = ".$modelo->getId_grado();
+		$query = "SELECT * FROM notas WHERE id_usuario = ".$modelo->getId_usuario().
+				" and id_cursos = ".$modelo->getId_cursos()." and id_bimestre = ".$modelo->getId_bimestre();
+				
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		
@@ -43,8 +43,8 @@ class NotasDAO{
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
 		$query = "UPDATE notas SET ex_mensual='".$modelo->getEx_mensual()."' WHERE id_usuario=".$modelo->getId_usuario().
-				" and id_cursos = ".$modelo->getId_cursos()." and id_bimestre = ".$modelo->getId_bimestre().
-				" and id_grado = ".$modelo->getId_grado();
+				" and id_cursos = ".$modelo->getId_cursos()." and id_bimestre = ".$modelo->getId_bimestre();
+				
 		
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);	
@@ -54,8 +54,7 @@ class NotasDAO{
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
 		$query = "DELETE FROM notas WHERE id_usuario=".$modelo->getId_usuario().
-				" and id_cursos = ".$modelo->getId_cursos()." and id_bimestre = ".$modelo->getId_bimestre().
-				" and id_grado = ".$modelo->getId_grado();
+				" and id_cursos = ".$modelo->getId_cursos()." and id_bimestre = ".$modelo->getId_bimestre();
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 		

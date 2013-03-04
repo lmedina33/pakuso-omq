@@ -7,9 +7,9 @@ class CursosDAO{
         public function insertar (Cursos $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "INSERT INTO cursos (id_cursos, nombre, id_usuario, id_grado) VALUES 
+                $query = "INSERT INTO cursos (id_cursos, nombre, id_grado) VALUES 
                                 ('".$modelo->getId_cursos()."','".$modelo->getNombre().
-                                "','".$modelo->getId_usuario()."','".$modelo->getId_grado()."')";
+                                "','".$modelo->getId_grado()."')";
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);
         }
@@ -18,7 +18,7 @@ class CursosDAO{
 
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT id_cursos, nombre, id_usuario, id_grado FROM cursos";
+                $query = "SELECT * FROM cursos";
                 $result = mysql_query($query, $link); 
                 mysql_close($link);
 
@@ -28,7 +28,7 @@ class CursosDAO{
         public function obtener(Cursos $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT id_cursos, nombre, id_usuario, id_grado FROM cursos WHERE id_cursos = ".$modelo->getId_cursos();
+                $query = "SELECT * FROM cursos WHERE id_cursos = ".$modelo->getId_cursos();
                 $result = mysql_query($query, $link);
                 mysql_close($link);
                 

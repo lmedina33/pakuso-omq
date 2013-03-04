@@ -8,7 +8,7 @@ class CursosNegocio{
                 
                 $modelo = new Cursos();
                 $modelo->setId_cursos($rol_nombre);
-                $modelo->setId_usuario($id_usuario);
+                $modelo->setDetalle($detalle);
                 $modelo->setId_grado($id_grado);
                 
                 $dao = new CursosDAO();
