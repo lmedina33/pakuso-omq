@@ -1,50 +1,47 @@
 -<<?php
 
-require_once '../negocio/UsuarioNegocio.php';
+require_once '../negocio/BimestreNegocio.php';
 
 
 print '</br>';
 print 'Ingresar';
 print '</br>';
-$negocio = new UsuarioNegocio();
-$negocio->insertar("1234","pepe","rodriguez","sanchez","2013-02-11","1123123");
-
+$negocio = new BimestreNegocio();
+$negocio->insertar("5", "Quinto");
 print '</br>';
 print 'Listar';
 print '</br>';
 $resultado = $negocio->listar();
 while($row = mysql_fetch_array($resultado)) {	
-	print $row['id_usuario'].' -- '. $row['nombre1'].'</br>';
+	print $row['id_bimestre'].' -- '. $row['nombre'].'</br>';
 }
 
 
 print '</br>';
 print 'Obtener';
 print '</br>';
-$resultado = $negocio->obtener("1");
+$resultado = $negocio->obtener("5");
 while($row = mysql_fetch_array($resultado)) {
-	print $row['id_usuario'].' -- '. $row['nombre1'].'</br>';
+	print $row['id_bimestre'].' -- '. $row['nombre'].'</br>';
 }
 
 print '</br>';
 print 'Modificar';
-$negocio->modificar(9, "federico");
+$negocio->modificar(5, "Quinto A");
 print '</br>';
-$resultado = $negocio->obtener("9");
+$resultado = $negocio->obtener("5");
 while($row = mysql_fetch_array($resultado)) {
 	print $row['id_bimestre'].' -- '. $row['nombre'].'</br>';
 }
 
 
-
 print '</br>';
 print 'Eliminar';
-$negocio->eliminar(9);
+$negocio->eliminar(5);
 print '</br>';
 $resultado = $negocio->listar();
 while($row = mysql_fetch_array($resultado)) {
-	print $row['id_usuario'].' -- '. $row['nombre1'].'</br>';
+	print $row['id_bimestre'].' -- '. $row['nombre'].'</br>';
 }
-
 
 ?>

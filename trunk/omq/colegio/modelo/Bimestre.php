@@ -9,7 +9,7 @@ class Bimestre{
         public function setId_bimestre($id_bimestre){$this->id_bimestre = $id_bimestre;}
         
         public function getNombre() {return $this->nombre;}
-        public function setNombre($descripcion){$this->nombre = $nombre;}
+        public function setNombre($nombre){$this->nombre = $nombre;}
      
 }
 ?>

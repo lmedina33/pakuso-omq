@@ -4,11 +4,12 @@ require_once '../modelo/Cursos.php';
 
 class CursosNegocio{
         
-        public function insertar ($id_cursos, $nombre, $id_usuario, $id_grado){
+        public function insertar ($id_cursos, $nombre, $detalle, $id_grado){
                 
                 $modelo = new Cursos();
-                $modelo->setId_cursos($rol_nombre);
-                $modelo->setDetalle($detalle);
+                $modelo->setId_cursos($id_cursos);
+                $modelo->setNombre($nombre);
+                $modelo->setDetalle($detalle); 
                 $modelo->setId_grado($id_grado);
                 
                 $dao = new CursosDAO();

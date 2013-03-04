@@ -29,7 +29,7 @@ class BoletinNegocio{
 		return $dao->obtener($modelo);
 	}
 	
-	public function modificar($id_boletin, $estado){
+	public function modificar($id_boletin, $titulo){
 		
 		$modelo = new Boletin();
 		$modelo->setId_boletin($id_boletin);

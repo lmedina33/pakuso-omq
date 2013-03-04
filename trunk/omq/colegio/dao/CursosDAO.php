@@ -7,9 +7,9 @@ class CursosDAO{
         public function insertar (Cursos $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "INSERT INTO cursos (id_cursos, nombre, id_grado) VALUES 
+                $query = "INSERT INTO cursos (id_cursos, nombre, detalle, id_grado) VALUES 
                                 ('".$modelo->getId_cursos()."','".$modelo->getNombre().
-                                "','".$modelo->getId_grado()."')";
+                                "','".$modelo->getDetalle()."','".$modelo->getId_grado()."')";
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);
         }
