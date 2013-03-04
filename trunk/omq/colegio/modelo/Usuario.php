@@ -12,7 +12,6 @@
 		private $dni;
 		private $direccion;
 		private $telefono;
-		private $estado_pago;
 		
 	/** getter / setter */
 		public function getId_usuario() {return $this->id_usuario;}
@@ -48,9 +47,6 @@
 		public function getTelefono(){return $this->telefono;}
 		public function setTelefono($telefono){$this->telefono = $telefono;}
 		
-		public function getEstado_pago(){return $this->estado_pago;}
-		public function setEstado_pago($estado_pago){$this->estado_pago = $estado_pago;}
 		
-
 	}
 ?>

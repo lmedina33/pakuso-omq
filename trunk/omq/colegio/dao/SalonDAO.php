@@ -1,15 +1,15 @@
 <?php
 require_once '../util/ConexionDB.php';
-require_once '../modelo/Bimestre.php';
+require_once '../modelo/Salon.php';
 
-class CursosDAO{
+class SalonDAO{
                 
-        public function insertar (Bimestre $modelo){
+        public function insertar (Salon $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "INSERT INTO bimestre (id_bimestre, nombre) VALUES 
-                                ('".$modelo->getId_bimestre()."','".$modelo->getNombre().
-                                "')";
+                $query = "INSERT INTO salon (id_salon, id_usuario, id_grupo,id_cursos) VALUES 
+                                ('".$modelo->getId_salon()."','".$modelo->getId_usuario().
+                                "','".$modelo->getId_grupo()."','".$modelo->getId_cursos()."')";
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);
         }
@@ -18,17 +18,17 @@ class CursosDAO{
 
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT * FROM bimestre";
+                $query = "SELECT * FROM salon";
                 $result = mysql_query($query, $link); 
                 mysql_close($link);
 
                 return $result;
         }
         
-        public function obtener(Bimestre $modelo){
+        public function obtener(Salon $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "SELECT * FROM bimestre WHERE id_bimestre = ".$modelo->getId_bimestre();
+                $query = "SELECT * FROM salon WHERE id_salon = ".$modelo->getId_salon();
                 $result = mysql_query($query, $link);
                 mysql_close($link);
                 
@@ -36,18 +36,18 @@ class CursosDAO{
                 
         }
         
-        public function modificar(Bimestre $modelo){
+        public function modificar(Salon $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "UPDATE bimestre SET nombre='".$modelo->getNombre()."' WHERE id_bimestre=".$modelo->getId_bimestre();
+                $query = "UPDATE salon SET id_grupo='".$modelo->getId_grupo()."' WHERE id_salon=".$modelo->getId_salon();
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);     
         }
 
-        public function eliminar(Bimestre $modelo){
+        public function eliminar(Salon $modelo){
                 $con = new ConexionDB();
                 $link = $con->conectarBD();
-                $query = "DELETE FROM bimestre WHERE id_bimestre=".$modelo->getId_bimestre();
+                $query = "DELETE FROM salon WHERE id_salon=".$modelo->getId_salon();
                 $result = mysql_query($query, $link) or die(mysql_error($link));
                 mysql_close($link);
                 
