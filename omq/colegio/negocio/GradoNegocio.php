@@ -2,7 +2,7 @@
 require_once '../dao/GradoDAO.php';
 require_once '../modelo/Grado.php';
 
-class UsuarioNegocio{
+class GradoNegocio{
 	
 	public function insertar ($id_grado,$nombre,$precio){
 		

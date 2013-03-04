@@ -4,12 +4,13 @@ require_once '../modelo/Matricula.php';
 
 class MatriculaNegocio{
 	
-	public function insertar ( $fecha_pago, $id_usuario, $id_grado){
+	public function insertar ( $fecha_pago, $id_usuario, $id_grado,$id_grupo){
 		
 		$modelo = new Matricula();
-		$modelo->setFecha($fecha_pago);
+		$modelo->setFecha_pago($fecha_pago);
 		$modelo->setId_usuario($id_usuario);
 		$modelo->setId_grado($id_grado);
+		$modelo->setId_grupo($id_grupo);
 		
 		$dao = new MatriculaDAO();
 		$dao->insertar($modelo);

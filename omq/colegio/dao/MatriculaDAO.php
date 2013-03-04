@@ -8,9 +8,9 @@ class MatriculaDAO{
 	public function insertar (Matricula $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "INSERT INTO matricula (fecha_pago, id_usuario, id_grado)
+		$query = "INSERT INTO matricula (fecha_pago, id_usuario, id_grado, id_grupo)
 				 VALUES ('".$modelo->getFecha_pago()."','".$modelo->getId_usuario()."',
-				 '".$modelo->getId_grado()."')";
+				 '".$modelo->getId_grado()."','".$modelo->getId_grupo()."')";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 	}
@@ -29,7 +29,7 @@ class MatriculaDAO{
 	public function obtener(Matricula $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT id_usuario, fecha_pago FROM matricula WHERE id_matricula = ".$modelo->getId_matricula();
+		$query = "SELECT * FROM matricula WHERE id_matricula = ".$modelo->getId_matricula();
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		

@@ -7,7 +7,7 @@ class GrupoNegocio{
         public function insertar ($id_grupo, $nombre){
                 
                 $modelo = new Grupo();
-                $modelo->setId_cursos($id_grupo);
+                $modelo->setId_grupo($id_grupo);
                 $modelo->setNombre($nombre);
                 
                 $dao = new GrupoDAO();
@@ -22,7 +22,7 @@ class GrupoNegocio{
         public function obtener($id_grupo){
                 
                 $modelo = new Grupo();
-                $modelo->setId_cursos($id_grupo);
+                $modelo->setId_grupo($id_grupo);
                 
                 $dao = new GrupoDAO();
                 return $dao->obtener($modelo);

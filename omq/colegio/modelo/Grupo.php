@@ -9,7 +9,7 @@ class Grupo{
         public function setId_grupo($id_grupo){$this->id_grupo = $id_grupo;}
         
         public function getNombre() {return $this->nombre;}
-        public function setNombre($descripcion){$this->nombre = $nombre;}
+        public function setNombre($nombre){$this->nombre = $nombre;}
      
 }
 ?>
