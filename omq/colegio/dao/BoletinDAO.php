@@ -8,8 +8,8 @@ class BoletinDAO{
 	public function insertar (Boletin $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "INSERT INTO boletin (titulo,comentario,imagen)
-				 VALUES ('".$modelo->getTitulo()."','".$modelo->getComentario()."','".$modelo->getImagen."')";	
+		$query = "INSERT INTO boletin (titulo, comentario, imagen)
+				 VALUES ('".$modelo->getTitulo()."','".$modelo->getComentario()."','".$modelo->getImagen()."')";	
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 	}

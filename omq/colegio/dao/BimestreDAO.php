@@ -2,7 +2,7 @@
 require_once '../util/ConexionDB.php';
 require_once '../modelo/Bimestre.php';
 
-class CursosDAO{
+class BimestreDAO{
                 
         public function insertar (Bimestre $modelo){
                 $con = new ConexionDB();
