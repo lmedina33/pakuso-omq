@@ -8,8 +8,9 @@ class SalonNegocio{
                 
                 $modelo = new Salon();
                 $modelo->setId_usuario($id_usuario);
+                $modelo->setId_salon($id_salon);
                 $modelo->setId_grupo($id_grupo);
-                $modelo->setId_cursos($cursos);
+                $modelo->setId_cursos($id_cursos);
                 
                 $dao = new SalonDAO();
                 $dao->insertar($modelo);

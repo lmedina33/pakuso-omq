@@ -27,7 +27,7 @@ class RolDAO{
 	public function obtener(Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT rol_nombre, descripcion FROM rol WHERE rol_nombre = ".$modelo->getRol_nombre();
+		$query = "SELECT rol_nombre, descripcion FROM rol WHERE rol_nombre = '".$modelo->getRol_nombre()."'";
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		
@@ -38,7 +38,7 @@ class RolDAO{
 	public function modificar(Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "UPDATE rol SET descripcion='".$modelo->getDescripcion()."' WHERE rol_nombre=".$modelo->getRol_nombre();
+		$query = "UPDATE rol SET descripcion= '".$modelo->getDescripcion()."' WHERE rol_nombre= '".$modelo->getRol_nombre()."'";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);	
 	}
@@ -46,7 +46,7 @@ class RolDAO{
 	public function eliminar(Rol $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "DELETE FROM rol WHERE rol_nombre=".$modelo->getRol_nombre();
+		$query = "DELETE FROM rol WHERE rol_nombre= '".$modelo->getRol_nombre()."'";
 		$result = mysql_query($query, $link) or die(mysql_error($link));
 		mysql_close($link);
 		

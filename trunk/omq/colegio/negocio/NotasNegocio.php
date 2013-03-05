@@ -1,5 +1,5 @@
 <?php
-require_once '../dao/UsuarioDAO.php';
+require_once '../dao/NotasDAO.php';
 require_once '../modelo/Notas.php';
 
 class NotasNegocio{

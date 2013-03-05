@@ -18,7 +18,7 @@ class Salon{
 	public function setId_grupo($id_grupo){		$this->id_grupo = $id_grupo;}
 	
 	public function getId_cursos() {return $this->id_cursos;}
-	public function setId_cursos($cursos){		$this->id_cursos = $id_cursos;}
+	public function setId_cursos($id_cursos){		$this->id_cursos = $id_cursos;}
 	
 
 }
