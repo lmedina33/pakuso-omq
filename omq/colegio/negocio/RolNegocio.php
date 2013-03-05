@@ -2,7 +2,7 @@
 require_once '../dao/RolDAO.php';
 require_once '../modelo/Rol.php';
 
-class UsuarioNegocio{
+class RolNegocio{
 	
 	public function insertar ($rol_nombre,$descripcion){
 		
