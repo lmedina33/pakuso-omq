@@ -7,7 +7,7 @@ print '</br>';
 print 'Ingresar';
 print '</br>';
 $negocio = new MatriculaNegocio();
-$negocio->insertar("2011-02-01", 1,11,2);
+$negocio->insertar("2011-02-01", 1,11,2);	 
 print '</br>';
 print 'Listar';
 print '</br>';
@@ -31,7 +31,7 @@ $negocio->modificar(10, "1999-10-12");
 print '</br>';
 $resultado = $negocio->obtener("10");
 while($row = mysql_fetch_array($resultado)) {
-	print $row['id_matricula'].' -- '. $row['nombre'].'</br>';
+	print $row['id_matricula'].' -- '. $row['fecha_pago'].' -- '. $row['id_usuario'].' -- '. $row['id_grado'].' -- '. $row['id_grupo'].'</br>';
 }
 
 
@@ -41,7 +41,7 @@ $negocio->eliminar(10);
 print '</br>';
 $resultado = $negocio->listar();
 while($row = mysql_fetch_array($resultado)) {
-	print $row['id_matricula'].' -- '. $row['nombre'].'</br>';
+	print $row['id_matricula'].' -- '. $row['fecha_pago'].' -- '. $row['id_usuario'].' -- '. $row['id_grado'].' -- '. $row['id_grupo'].'</br>';
 }
 
 ?>
