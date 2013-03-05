@@ -11,7 +11,7 @@ class MatriculaNegocio{
 		$modelo->setId_usuario($id_usuario);
 		$modelo->setId_grado($id_grado);
 		$modelo->setId_grupo($id_grupo);
-		
+		 	
 		$dao = new MatriculaDAO();
 		$dao->insertar($modelo);
 	}
