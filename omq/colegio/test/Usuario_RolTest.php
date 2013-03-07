@@ -7,7 +7,7 @@ print '</br>';
 print 'Ingresar';
 print '</br>';
 $negocio = new Usuario_rolNegocio();
-$negocio->insertar("profesor", 1);
+$negocio->insertar("profesor", "mtorresg");
 print '</br>';
 print 'Listar';
 print '</br>';
@@ -27,9 +27,9 @@ while($row = mysql_fetch_array($resultado)) {
 
 print '</br>';
 print 'Modificar';
-$negocio->modificar("profesor", 5);
+$negocio->modificar("profesor", "mtorresg");
 print '</br>';
-$resultado = $negocio->obtener(5);
+$resultado = $negocio->obtener("mtorresg");
 while($row = mysql_fetch_array($resultado)) {
 	print $row['rol_nombre'].' -- '. $row['id_usuario'].'</br>';
 }
@@ -37,7 +37,7 @@ while($row = mysql_fetch_array($resultado)) {
 
 print '</br>';
 print 'Eliminar';
-$negocio->eliminar($id_usuario);
+$negocio->eliminar("mtorresg");
 print '</br>';
 $resultado = $negocio->listar();
 while($row = mysql_fetch_array($resultado)) {

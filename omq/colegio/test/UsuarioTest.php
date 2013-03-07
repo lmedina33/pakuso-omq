@@ -7,7 +7,7 @@ print '</br>';
 print 'Ingresar';
 print '</br>';
 $negocio = new UsuarioNegocio();
-$negocio->insertar("1234","pepe","rodriguez","sanchez","2013-02-11","1123123");
+$negocio->insertar("prodriguezs","pepe","rodriguez","sanchez","2013-02-11","1123123");
 
 print '</br>';
 print 'Listar';
@@ -32,7 +32,7 @@ $negocio->modificar(9, "federico");
 print '</br>';
 $resultado = $negocio->obtener("9");
 while($row = mysql_fetch_array($resultado)) {
-	print $row['id_bimestre'].' -- '. $row['nombre'].'</br>';
+	print $row['id_usuario'].' -- '. $row['nombre1'].'</br>';
 }
 
 

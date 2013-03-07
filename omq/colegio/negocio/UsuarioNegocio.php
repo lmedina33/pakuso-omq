@@ -4,9 +4,10 @@ require_once '../modelo/Usuario.php';
 
 class UsuarioNegocio{
 	
-	public function insertar ($clave, $nombre1, $paterno, $materno, $fecha, $dni){
+	public function insertar ($id_usuario,$clave, $nombre1, $paterno, $materno, $fecha, $dni){
 		
 		$modelo = new Usuario();
+		$modelo->setId_usuario($id_usuario);
 		$modelo->setClave($clave);
 		$modelo->setNombre1($nombre1);
 		$modelo->setPaterno($paterno);
