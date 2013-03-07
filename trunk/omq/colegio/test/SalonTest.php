@@ -7,7 +7,7 @@ print '</br>';
 print 'Ingresar';
 print '</br>';
 $negocio = new SalonNegocio();
-$negocio->insertar(16, 7, 3, 12);
+$negocio->insertar(16, 7, 3, "federico");
 print '</br>';
 print 'Listar';
 print '</br>';
