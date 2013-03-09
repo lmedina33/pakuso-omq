@@ -1,6 +1,6 @@
 <?php
-require_once '../dao/BoletinDAO.php';
 require_once '../modelo/Boletin.php';
+require_once '../dao/BoletinDAO.php';
 
 class BoletinNegocio{
 	
