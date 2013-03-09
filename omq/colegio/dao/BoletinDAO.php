@@ -1,5 +1,4 @@
 <?php    
-
 require_once '../util/ConexionDB.php';
 require_once '../modelo/Boletin.php';
 
@@ -28,7 +27,7 @@ class BoletinDAO{
 	public function obtener(Boletin $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT id_boletin, titulo FROM boletin WHERE id_boletin = ".$modelo->getId_boletin();
+		$query = "SELECT id_boletin, titulo, imagen FROM boletin WHERE id_boletin = ".$modelo->getId_boletin();
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		
