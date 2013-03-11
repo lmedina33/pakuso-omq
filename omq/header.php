@@ -1,6 +1,7 @@
 <?php
+ini_set('include_path', '.;c:\wamp\www\omq');
 require_once 'colegio/negocio/BoletinNegocio.php';
-$modelo = new BoletinNegocio();
+$negocio = new BoletinNegocio();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -97,9 +98,9 @@ $modelo = new BoletinNegocio();
 				<div class="wrapper">
 					<section class="col1">
 						<h2 class="under"><?php
-							$resultado = $negocio->obtener(1);
+							$resultado = $negocio->obtener(2);
 							while($row = mysql_fetch_array($resultado)) {
-							print $row['id_boletin'];}?></h2>
+							print $row['titulo'];}?></h2>
 						<div class="wrapper">
 							<p>
 							  <figure class="left marg_right1"><img src="images/page1_img1.jpg" alt=""></figure>

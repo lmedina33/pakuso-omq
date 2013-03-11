@@ -1,6 +1,7 @@
 <?php    
-require_once '../util/ConexionDB.php';
-require_once '../modelo/Boletin.php';
+ini_set('include_path', '.;c:\wamp\www\omq');
+require_once 'colegio/util/ConexionDB.php';
+require_once 'colegio/modelo/Boletin.php';
 
 class BoletinDAO{
 
@@ -27,7 +28,7 @@ class BoletinDAO{
 	public function obtener(Boletin $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT id_boletin, titulo, imagen FROM boletin WHERE id_boletin = ".$modelo->getId_boletin();
+		$query = "SELECT titulo  FROM boletin WHERE id_boletin = ".$modelo->getId_boletin();
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		
