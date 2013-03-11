@@ -1,6 +1,7 @@
 <?php
-require_once '../modelo/Boletin.php';
-require_once '../dao/BoletinDAO.php';
+ini_set('include_path', '.;c:\wamp\www\omq');
+require_once 'colegio/modelo/Boletin.php';
+require_once 'colegio/dao/BoletinDAO.php';
 
 class BoletinNegocio{
 	
