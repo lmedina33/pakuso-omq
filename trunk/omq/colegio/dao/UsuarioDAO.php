@@ -1,7 +1,7 @@
 <?php    
 
-require_once '../util/ConexionDB.php';
-require_once '../modelo/Usuario.php';
+require_once 'colegio/util/ConexionDB.php';
+require_once 'colegio/modelo/Usuario.php';
 
 class UsuarioDAO{
 
@@ -53,6 +53,8 @@ class UsuarioDAO{
 		mysql_close($link);
 		
 	}
+	
+
 }
 
 

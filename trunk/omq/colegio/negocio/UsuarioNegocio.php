@@ -1,6 +1,6 @@
 <?php
-require_once '../dao/UsuarioDAO.php';
-require_once '../modelo/Usuario.php';
+require_once 'colegio/dao/UsuarioDAO.php';
+require_once 'colegio/modelo/Usuario.php';
 
 class UsuarioNegocio{
 	
@@ -51,5 +51,7 @@ class UsuarioNegocio{
 		$dao = new UsuarioDAO();
 		$dao->eliminar($modelo);
 	}
+	
+
 }
 ?>

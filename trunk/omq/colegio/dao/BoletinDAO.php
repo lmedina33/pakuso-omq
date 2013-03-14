@@ -28,7 +28,7 @@ class BoletinDAO{
 	public function obtener(Boletin $modelo){
 		$con = new ConexionDB();
 		$link = $con->conectarBD();
-		$query = "SELECT titulo  FROM boletin WHERE id_boletin = ".$modelo->getId_boletin();
+		$query = "SELECT titulo , comentario, imagen FROM boletin WHERE id_boletin = ".$modelo->getId_boletin();
 		$result = mysql_query($query, $link);
 		mysql_close($link);
 		

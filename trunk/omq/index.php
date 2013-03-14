@@ -1,12 +1,20 @@
 <?php
 ini_set('include_path', '.;c:\wamp\www\omq');
+
 require_once 'colegio/negocio/BoletinNegocio.php';
-$negocio = new BoletinNegocio();
+require_once 'colegio/negocio/FraseNegocio.php';
+require_once 'colegio/negocio/UsuarioNegocio.php';
+require_once 'colegio/modelo/Usuario.php';
+
+$negbol = new BoletinNegocio();
+$negfra = new FraseNegocio();
+$negusu = new UsuarioNegocio();
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Home</title>
+<title>Inicio</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
@@ -98,45 +106,39 @@ $negocio = new BoletinNegocio();
 				<div class="wrapper">
 					<section class="col1">
 						<h2 class="under"><?php
-							$resultado = $negocio->obtener(2);
+							$resultado = $negbol->obtener(1);
 							while($row = mysql_fetch_array($resultado)) {
-							print $row['titulo'];}?></h2>
+							print $row['titulo'];
+							print '</h2>
 						<div class="wrapper">
 							<p>
-							  <figure class="left marg_right1"><img src="images/page1_img1.jpg" alt=""></figure>
-							Informacion que se mostrara de una base de datos....</p>
-							<p>Mas adelante habra mas informacion de esta.</p>
-							<p>Institución Educativa con sistema Pre Universitario, ubicado en la Av. Los Rosales N° 789 - Urb. Valdiviezo - Ate. Teléfono 326 - 2986. E-mail: cpu_omq@hotmail.com. Nuestro lema: "Calidad - seriedad - Eficiencia". R.D. 3071-98-UGEL06
+							  <figure class="left marg_right1"><img src="'.$row['imagen'].'" alt=""></figure>
+							'.$row['comentario'].'
 						  </p>
 							<p>&nbsp;</p>
 						</div>
-					</section>
+					</section>';
+							}
+							?>
 					<section class="col2 pad_left1">
 						<h2>Frases:</h2>
 						<div class="testimonials">
 						<div id="testimonials">
 						  <ul>
-							<li>
+						 	<?php 
+						 	$resultadofra = $negfra->obtenerFrases();
+						 	while($rowfra = mysql_fetch_array($resultadofra)) {
+						 		print '<li>
 								<div>
-									“Lo grande de la enseñanza es ver progresar a tus alumnos.”
-								</div>
-								<span><strong class="color1">Antonio Torres,</strong> <br>
-								Director</span>
-							</li>
-							<li>
-								<div>
-									“Porque un alumno merece aprender con los mejores.”
-								</div>
-								<span><strong class="color1">Antonio Torres,</strong> <br>
-								Director</span>
-							</li>
-							<li>
-								<div>
-									“Valoramos el deporte, el arte y el teatro.”
-								</div>
-								<span><strong class="color1">Gustavo Torres,</strong> <br>
-								Profesor</span>
-							</li>
+								'.$rowfra['frase'].'
+								</div>';
+									print '<span><strong class="color1">'.$rowfra['nombre1'].' '.$rowfra['paterno'].',</strong> <br>
+									'.$rowfra['rol_nombre'].'</span>
+									</li>';	
+							}
+							
+						 	?>
+							
 						  </ul>
 						</div>
 						<a href="#" class="up"></a>
@@ -205,8 +207,5 @@ $negocio = new BoletinNegocio();
 <script type="text/javascript"> Cufon.now(); </script>
 </body>
 </html>
-						<?php
-							$resultado = $negocio->obtener("1");
-							while($row = mysql_fetch_array($resultado)) {
-							print $row['id_boletin'];}?>
+						
 						
